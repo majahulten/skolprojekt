@@ -38,13 +38,15 @@ def write_poem(sentence): # Skriver ut dikten och lagrar olika delar av dikten i
         print("".join(item), end=" ")
     print('')
     return sentence1, sentence2, sentence3, sentence4
-def huvudprogram(): #Huvudprogrammet som kör allt
-    sentence = 4*[None]
-    intro()
-    create_poem(sentence)
-    write_headline(sentence)
-    print('\n')
-    write_poem(sentence)
 
 if __name__ == "__main__":
+    def huvudprogram():  # Huvudprogrammet som kör allt
+        sentence = 4 * [None]
+        intro()
+        create_poem(sentence)
+        write_headline(sentence)
+        print('\n')
+        write_poem(sentence)
+
     huvudprogram()
+
