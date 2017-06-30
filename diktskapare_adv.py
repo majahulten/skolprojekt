@@ -3,14 +3,14 @@
 def create_poem():
 	# skapa en lista
 	sentence = []
-	
+
 	for i in range(4):
 		# fråga användaren efter en mening
 		# lägg till meningen i listan
 		sentence.append(input('sentence number {}: '.format(i+1)))
 
-		if sentence[0] <= 4:
-			print('första meningen behöver bestå av mer än 4 ord')
+		if sentence[0] <= 4 or sentence[i] < 3:
+			print('En mening måste bestå av minst tre ord. (minst fem för första meningen)')
 			# om sant avsluta programmet
 			exit(1)
 
@@ -29,9 +29,10 @@ def write_poem(sentence):
 	not_first = sentence[1:]
 
 	# 1. first_four.uppercase
-	# skapa en sträng, loopa fyra första, stora bokstäver och lägg till i sträng
+	# skapa en sträng och loopa fyra första orden i meningen
 	title = ''
 	for word in first_four:
+		# gör om varje ord till stora bokstäver och lägg till i strängen
 		title += word.upper() + ' '
 	print(title)
 
@@ -59,6 +60,6 @@ def write_poem(sentence):
 
 # kör programmet
 if __name__ == "__main__":
-	# spara return värdet från funtionen i variablen sentence
+	# spara return värdet från funtionen i variablen lista
 	lista = create_poem()
 	write_poem(lista)
