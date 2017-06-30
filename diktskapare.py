@@ -46,5 +46,5 @@ def huvudprogram(): #Huvudprogrammet som kör allt
     print('\n')
     write_poem(sentence)
 
-
-huvudprogram()
+if __name__ == "__main__":
+    huvudprogram()
