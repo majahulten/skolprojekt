@@ -1,18 +1,18 @@
 # Varning programmet öppnar program i din webbrowser med ljud så vänligen ha hörlurar och ljud på
 # Vill du åka något mer  ---
 # Välkommen åter   ---
-# Fixa while n=+1 saken
-# Implementera ålder, tålamod och längdkrav för de olika attraktionerna --- fixa att det funkar
-# Fixa alla bilder och URL:er ---
+# Fixa while n=+1 saken ---
+# Implementera ålder, tålamod och längdkrav för de olika attraktionerna --- fixa att det funkar ---S
+# Fixa fel URL för house of terror och Bergodalbana
 # Rensa upp koden
-# If main
 # Källförteckning
 # Kommentarer + övertext
+# skicka in person ---
 
 import time
 import webbrowser
 import random
-n=1
+
 
 def intro_main():
     print ('Varmt välkommen till vårt nöjesfält, för att få ut så mycket som möjligt av den här upplevelsen vänligen '
@@ -33,9 +33,9 @@ def create_profile_visitor():
     length=int(input('Hur lång är du i cm?'))
     person=visitor(age,patience,length)
     print (person)
-
+    return person
 intro_main()
-create_profile_visitor()
+person=create_profile_visitor()
 
 
 
@@ -50,35 +50,35 @@ def accident_Chalmers():
     #webbrowser.open('URL')
 
 def attraction_works_Chalmers():
-    works = ['1','2','3']
-    print (works[random.randrange(len(works))])
-    if works == 1:
+    works = [1,2,3]
+    work=(works[random.randrange(len(works))])
+    if work == 1:
         print('Du klarade det!!!')
         time.sleep(5)
         webbrowser.open('https://media.giphy.com/media/114IumHhV6sTRK/giphy.gif')
-    if works == 2:
+    if work == 2:
         print('Äntligen ingengör')
         time.sleep(5)
         webbrowser.open('http://scarc.library.oregonstate.edu/omeka/files/original/6de07777cfb10eb37b7b48ae5bcff5dc.jpg')
-    if works == 3:
+    if work== 3:
         print('Du överlevde första året')
         webbrowser.open('https://media.giphy.com/media/bKBM7H63PIykM/giphy.gif')
 
 
-def attraction_Chalmers():
-    if age < 18:
+def attraction_Chalmers(person):
+    if person.age < 18:
         print('Tyvärr har du inte åldern inne, men du är välkommen åter efter gymnasiet')
-    if age > 18:
-        if patience < 6:
+    if person.age > 18:
+        if person.patience < 6:
             print('Tyvärr, en sån här utbildning kräver mycket tålamod så tror inte att den kan vara något för dig')
-    else:
-        webbrowser.open('https://upload.wikimedia.org/wikipedia/commons/c/cd/Chalmers_huvudentre.jpg')
-        attraction=[attraction_works_Chalmers,accident_Chalmers]
-        print(attraction[random.randrange(len(attraction))])
-        if attraction_works_Chalmers:
-            attraction_works_Chalmers()
-        if accident_Chalmers:
-            accident_Chalmers()
+        else:
+            webbrowser.open('https://upload.wikimedia.org/wikipedia/commons/c/cd/Chalmers_huvudentre.jpg')
+            attraction=[attraction_works_Chalmers,accident_Chalmers]
+            what_happens=(attraction[random.randrange(len(attraction))])
+            if what_happens==attraction_works_Chalmers:
+                attraction_works_Chalmers()
+            if what_happens==accident_Chalmers:
+                accident_Chalmers()
     
     
 
@@ -93,26 +93,26 @@ def accident_Houseofterror():
 
 def attraction_works_Houseofterror():
     works = [1,2,3,4]
-    print (works[random.randrange(len(works))])
-    if works == 1:
+    work= (works[random.randrange(len(works))])
+    if work == 1:
         webbrowser.open('https://www.youtube.com/watch?v=TFAf_xgNjpE') # Witch laugh
-    if works == 2:
+    if work == 2:
         webbrowser.open('https://www.youtube.com/watch?v=WZt7YEuLQ1U') # Creapy lullaby
-    if works == 3:
+    if work == 3:
         webbrowser.open('https://www.youtube.com/watch?v=MytAOmbnLpg') # Sound from a mental hospital
-    if works == 4:
+    if work == 4:
         webbrowser.open('https://www.youtube.com/watch?v=HpqbJMd6n-U') # scary house sound effects
         
-def attraction_Houseofterror():
-    if age < 15:
+def attraction_Houseofterror(person):
+    if person.age < 15:
         print('Tyvärr har du inte åldern inne, men du är välkommen åter efter att du fyllt 15')
     else:
         webbrowser.open('https://s-media-cache-ak0.pinimg.com/originals/a0/cd/3d/a0cd3de541fe2c84e2fe4bf41667e175.jpg')
         attraction=[attraction_works_Houseofterror,accident_Houseofterror]
-        print(attraction[random.randrange(len(attraction))])
-        if attraction_works_Houseofterror:
+        what_happens=(attraction[random.randrange(len(attraction))])
+        if what_happens==attraction_works_Houseofterror:
             attraction_works_Houseofterror()
-        if accident_Houseofterror:
+        if what_happens==accident_Houseofterror:
             accident_Houseofterror()
     
 
@@ -129,55 +129,55 @@ def accident_Bergochdalbana():
 
 def attraction_works_Bergochdalbana():
     works = [1,2,3,4]
-    print (works[random.randrange(len(works))])
-    if works == 1:
+    work= (works[random.randrange(len(works))])
+    if work == 1:
         webbrowser.open('https://www.youtube.com/watch?v=h_lcZcBcQ0o')#Tyskland
-    if works == 2:
+    if work == 2:
         webbrowser.open('https://www.youtube.com/watch?v=1kR34mY1Z0A')# soundeffect scream
-    if works == 3:
+    if work == 3:
         webbrowser.open('https://www.youtube.com/watch?v=unocjGOPRUM') # trä china
-    if works == 4:
+    if work == 4:
         webbrowser.open('https://www.youtube.com/watch?v=_8JBcmoHDPI') # soundeffects
 
-def attraction_Bergochdalbana():
-    if length < 140:
+def attraction_Bergochdalbana(person):
+    if person.length < 140:
         print('Tyvärr behöver du växa lite mer innan vi säkert kan låta dig åka med oss')
     else:
         attraction = [attraction_works_Bergochdalbana,accident_Bergochdalbana]
-        print(attraction[random.randrange(len(attraction))])
-        if attraction_works_Bergochdalbana:
+        what_happens=(attraction[random.randrange(len(attraction))])
+        if what_happens==attraction_works_Bergochdalbana:
             attraction_works_Bergochdalbana()
-        if accident_Bergochdalbana:
+        if what_happens==accident_Bergochdalbana:
             accident_Bergochdalbana()
 
     
 
-def choose_attraction():
-    n=1
+def choose_attraction(person):
+
     print('Vad är du sugen på att åka? För Chalmers skriv 1, Houseofterror skriv 2 eller Bergochdalbana skriv 3')
     choose=int(input())
     if choose == 1:
-        attraction_Chalmers()
+        attraction_Chalmers(person)
     if choose == 2:
-        attraction_Houseofterror()
+        attraction_Houseofterror(person)
     if choose == 3:
-        attraction_Bergochdalbana()
-    n=+1
+        attraction_Bergochdalbana(person)
 
-def main():
-    while n < 1:
-        print('')
-        choose_attraction()
-    else:
-        print('Vill du åka något mer? (Ja/Nej)')
-        stay_or_go=input()
+
+def main(person):
+
+    choose_attraction(person)
+
+    print('Vill du åka något mer? (Ja/Nej)')
+    stay_or_go=input()
     if stay_or_go == 'Ja':
-        choose_attraction ()
+        main (person)
+        return
     if stay_or_go == 'Nej':
         print('Tack för att du valde vårt nöjesfält, välkommen åter')
     else:
         print('Jag förstod inte vad du sa vänligen försök igen')
-        main()
+        main(person)
 
 
-main()
+main(person)
